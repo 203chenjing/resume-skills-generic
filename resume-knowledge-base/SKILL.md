@@ -1,6 +1,6 @@
 ---
-name: resume-vault
-description: 流水线上游｜简历弹药库 Agent Skill：把简历与确认事实归档成简历数据库.md，STAR/指标/待确认一次到位，为按岗改稿提供可溯源证据底座。只入库不定向，改写走 resume-screenpass。
+name: resume-knowledge-base
+description: 流水线上游｜简历知识库 Agent Skill：把简历与确认事实归档成简历数据库.md，STAR/指标/待确认一次到位，为按岗改稿提供可溯源证据底座。只入库不定向，改写走 resume-optimizer。
 tags: [内容创作, 求职工具, 简历]
 version: 1.0.0
 capability: text_generation
@@ -9,11 +9,11 @@ pricing:
   amount_fen: 10
 ---
 
-# 简历素材库
+# 简历知识库
 
 ## Goal
 
-维护经用户确认的**经历素材库**（默认 `简历数据库.md`），供 JD 改简历时抽取事实、STAR、指标、关键词与项目层级规则。知识库比投递简历更完整、更原始；**不是**一页 PDF 简历。
+维护经用户确认的**经历知识库**（默认 `简历数据库.md`），供 JD 改简历时抽取事实、STAR、指标、关键词与项目层级规则。知识库比投递简历更完整、更原始；**不是**一页 PDF 简历。
 
 默认路径：用户工作区任意约定路径（如 `简历数据库.md`），或用户指定路径。
 
@@ -41,8 +41,8 @@ pricing:
 
 ## 与改简历技能分工
 
-| 本 skill | resume-screenpass（过筛选改简历 · ScreenPass Resume） |
-|----------|---------------------------------------|
+| 本 skill | resume-optimizer（简历优化 · Resume Optimizer） |
+|----------|------------------------------------------------|
 | 沉淀全部可验证事实与 STAR | 按单个 JD 筛选、压缩、排序 |
 | 记录层级与 JD 映射规则 | 执行合并/拆条 |
 | 指标来源与待确认项 | 投递版只写已确认指标 |

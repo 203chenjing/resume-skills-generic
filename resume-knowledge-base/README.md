@@ -1,8 +1,8 @@
-# 简历弹药库 · Resume Vault
+# 简历知识库 · Resume Knowledge Base
 
 # 写一次，百岗可调 — 你的经历证据档案
 
-> **Cursor Agent Skill · 经历入库层**  
+> **Cursor Agent Skill · 上游入库层**  
 > 把可验证事实归档成 `简历数据库.md`，供下游匹配引擎跨岗位复用。
 
 [![Version](https://img.shields.io/badge/version-v1.0.0-blue)](SKILL.md)
@@ -12,11 +12,11 @@
 
 ## 上游模块：事实底座
 
-改简历最难的不是「写」，是「找」——指标散落在 PDF、聊天记录和脑子里，每次按 JD 改稿都要重新考古。弹药库解决这个问题：**把经历沉淀为单一事实来源**，下游只在已确认内容里选材组合。
+改简历最难的不是「写」，是「找」——指标散落在 PDF、聊天记录和脑子里，每次按 JD 改稿都要重新考古。知识库解决这个问题：**把经历沉淀为单一事实来源**，下游只在已确认内容里选材组合。
 
-AI 编造的根源，往往是手里没有真相。弹药库是第一道闸：只搬运、不润色，不确定的统一标 `[待确认]`。
+AI 编造的根源，往往是手里没有真相。知识库是第一道闸：只搬运、不润色，不确定的统一标 `[待确认]`。
 
-*Resume Vault is the upstream evidence layer. Ingest once; every downstream rewrite pulls from the same source of truth.*
+*Resume Knowledge Base is the upstream evidence layer. Ingest once; every downstream rewrite pulls from the same source of truth.*
 
 ---
 
@@ -30,7 +30,7 @@ AI 编造的根源，往往是手里没有真相。弹药库是第一道闸：�
 | **待确认管理** | 未核实数据统一标 `[待确认]`，不误写入投递稿 |
 | **回写机制** | 改写环节被压缩的细节回写库内，防止证据流失 |
 
-**本模块不做：** 定向改写、JD 匹配、PDF 导出——那是 [ScreenPass Resume](../resume-screenpass/) 的职责。
+**本模块不做：** 定向改写、JD 匹配、PDF 导出——那是 [简历优化 · Resume Optimizer](../resume-optimizer/) 的职责。
 
 ---
 
@@ -45,10 +45,10 @@ AI 编造的根源，往往是手里没有真相。弹药库是第一道闸：�
         ↓
   输出 / 更新 简历数据库.md
         ↓
-  下游：resume-screenpass 证据链匹配改写
+  下游：resume-optimizer 证据链匹配改写
 ```
 
-**推荐搭配：** [过筛选改简历 · ScreenPass Resume](../resume-screenpass/) — Vault 持有全量真相，ScreenPass 打定向稿。
+**推荐搭配：** [简历优化 · Resume Optimizer](../resume-optimizer/) — 知识库持有全量真相，优化模块打定向稿。
 
 ---
 
@@ -60,8 +60,8 @@ AI 编造的根源，往往是手里没有真相。弹药库是第一道闸：�
 
 | 范围 | 路径 |
 |------|------|
-| 项目级 | `<your-project>/.cursor/skills/resume-vault/` |
-| 个人级 | `~/.cursor/skills/resume-vault/` |
+| 项目级 | `<your-project>/.cursor/skills/resume-knowledge-base/` |
+| 个人级 | `~/.cursor/skills/resume-knowledge-base/` |
 
 ### 2. 准备输入
 
@@ -71,9 +71,9 @@ AI 编造的根源，往往是手里没有真相。弹药库是第一道闸：�
 
 ### 3. 开聊
 
-**「用 resume-vault 根据这份简历建立结构化素材库。」**
+**「用 resume-knowledge-base 根据这份简历建立结构化素材库。」**
 
-你会得到：创建或更新的 `简历数据库.md`，以及新增区块、待确认项、是否建议进入 ScreenPass 的汇报。
+你会得到：创建或更新的 `简历数据库.md`，以及新增区块、待确认项、是否建议进入简历优化的汇报。
 
 ---
 
@@ -109,8 +109,8 @@ AI 编造的根源，往往是手里没有真相。弹药库是第一道闸：�
 
 ## 模块分工
 
-| resume-vault（本模块） | resume-screenpass（配套） |
-|------------------------|---------------------------|
+| resume-knowledge-base（本模块） | resume-optimizer（配套） |
+|--------------------------------|--------------------------|
 | 沉淀全部可验证事实与 STAR | 按 JD 驱动匹配引擎筛选证据 |
 | 记录层级规则与按岗映射 | 执行 STAR 改写与版式校验 |
 | 管理指标来源与待确认项 | 输出 Markdown + 一页 PDF |

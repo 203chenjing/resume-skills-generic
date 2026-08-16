@@ -1,6 +1,6 @@
 ---
-name: resume-screenpass
-description: 流水线下游｜过筛选改简历 Agent Skill：JD 驱动证据链匹配→STAR 改写→版式校验→恰好一页 PDF。选材不创作，AI 提案你裁决，每条可溯源。有弹药库效果最佳，建库走 resume-vault。
+name: resume-optimizer
+description: 流水线下游｜简历优化 Agent Skill：JD 驱动证据链匹配→STAR 改写→版式校验→恰好一页 PDF。选材不创作，AI 提案你裁决，每条可溯源。有知识库效果最佳，建库走 resume-knowledge-base。
 tags: [内容创作, 求职工具, 简历]
 version: 1.0.0
 capability: text_generation
@@ -31,7 +31,7 @@ pricing:
 | 简历数据库（可选） | `简历数据库.md`，仅合并用户已确认内容 |
 | 偏好（可选） | 岗位名、城市、文件名、证件照 |
 
-知识库缺失时，按 **resume-vault** 技能判断是否先建库。
+知识库缺失时，按 **resume-knowledge-base** 技能判断是否先建库。
 
 ## 工作流程
 
