@@ -14,24 +14,23 @@
 ```text
 resume-skills-generic/
 ├── README.md                      ← you are here
-├── resume-tailor-generic/         ← dev copy: tailor skill (JD / STAR / PDF)
-├── resume-database-generic/       ← dev copy: database skill
-├── publish/                       ← release-ready copies + PUBLISH_CHECKLIST.md
+├── publish/                       ← release-ready skill packages (install from here)
+│   ├── PUBLISH_CHECKLIST.md
 │   ├── resume-tailor-generic/
 │   └── resume-database-generic/
-├── shared/                        ← shared scripts & templates (synced with dev copies)
+├── shared/                        ← shared scripts & templates (source for publish sync)
 ├── fixtures/                      ← fictional samples for regression
 └── tests/
     ├── run_regression.py
     └── REGRESSION_REPORT.md
 ```
 
-Each skill folder has a bilingual marketing-style `README.md`; `publish/` mirrors the same content for distribution.
+Root-level `resume-tailor-generic/` and `resume-database-generic/` may exist locally for development; they are **not** tracked in git — use `publish/` as the canonical copy on GitHub.
 
 ## 安装到 Cursor（3–5 步）
 
-1. 解压本包到任意目录，或直接使用本文件夹。
-2. 将两个 skill 目录复制到 Cursor 技能目录之一：
+1. 克隆或解压本仓库到任意目录。
+2. 将 `publish/` 下两个 skill 目录复制到 Cursor 技能目录之一：
    - **项目级**：`<你的项目>/.cursor/skills/`
    - **个人级**：`~/.cursor/skills/`（Windows 常见为 `%USERPROFILE%\.cursor\skills\`）
 3. 确认存在：
@@ -42,7 +41,7 @@ Each skill folder has a bilingual marketing-style `README.md`; `publish/` mirror
 
 ## 常用脚本
 
-在 `resume-tailor-generic/scripts/`（或 `shared/scripts/`）下：
+在 `publish/resume-tailor-generic/scripts/`（或 `shared/scripts/`）下：
 
 ```bash
 # 版式预检（仅 Markdown）

@@ -22,22 +22,25 @@ from pathlib import Path
 
 PKG = Path(__file__).resolve().parents[1]
 REPORT_PATH = Path(__file__).resolve().parent / "REGRESSION_REPORT.md"
+TAILOR = "publish/resume-tailor-generic"
+DATABASE = "publish/resume-database-generic"
 
 REQUIRED = [
     "README.md",
-    "resume-tailor-generic/SKILL.md",
-    "resume-tailor-generic/reference.md",
-    "resume-tailor-generic/examples.md",
-    "resume-tailor-generic/resume-template.md",
-    "resume-tailor-generic/resume-database-template.md",
-    "resume-tailor-generic/scripts/markdown_resume_to_pdf.py",
-    "resume-tailor-generic/scripts/check_resume_skill.py",
-    "resume-tailor-generic/scripts/crop_profile_photo.py",
-    "resume-database-generic/SKILL.md",
-    "resume-database-generic/reference.md",
-    "resume-database-generic/examples.md",
-    "resume-database-generic/resume-database-template.md",
-    "resume-database-generic/resume-database-l012-template.md",
+    "publish/PUBLISH_CHECKLIST.md",
+    f"{TAILOR}/SKILL.md",
+    f"{TAILOR}/reference.md",
+    f"{TAILOR}/examples.md",
+    f"{TAILOR}/resume-template.md",
+    f"{TAILOR}/resume-database-template.md",
+    f"{TAILOR}/scripts/markdown_resume_to_pdf.py",
+    f"{TAILOR}/scripts/check_resume_skill.py",
+    f"{TAILOR}/scripts/crop_profile_photo.py",
+    f"{DATABASE}/SKILL.md",
+    f"{DATABASE}/reference.md",
+    f"{DATABASE}/examples.md",
+    f"{DATABASE}/resume-database-template.md",
+    f"{DATABASE}/resume-database-l012-template.md",
     "shared/scripts/markdown_resume_to_pdf.py",
     "shared/scripts/check_resume_skill.py",
     "shared/scripts/crop_profile_photo.py",
@@ -119,8 +122,8 @@ def check_templates_load() -> list[tuple[bool, str]]:
     for rel in [
         "shared/templates/resume-template.md",
         "shared/templates/resume-database-template.md",
-        "resume-tailor-generic/resume-template.md",
-        "resume-database-generic/resume-database-l012-template.md",
+        f"{TAILOR}/resume-template.md",
+        f"{DATABASE}/resume-database-l012-template.md",
         "fixtures/sample-resume.md",
     ]:
         try:
@@ -136,7 +139,7 @@ def check_templates_load() -> list[tuple[bool, str]]:
 
 def check_script_help() -> list[tuple[bool, str]]:
     results = []
-    scripts_dir = PKG / "resume-tailor-generic" / "scripts"
+    scripts_dir = PKG / TAILOR / "scripts"
     for name in [
         "markdown_resume_to_pdf.py",
         "check_resume_skill.py",
@@ -168,7 +171,7 @@ def check_script_help() -> list[tuple[bool, str]]:
 
 def check_markdown_only_fixture() -> list[tuple[bool, str]]:
     results = []
-    scripts_dir = PKG / "resume-tailor-generic" / "scripts"
+    scripts_dir = PKG / TAILOR / "scripts"
     fixture = PKG / "fixtures" / "示例公司+张三+示例岗位.md"
     try:
         proc = subprocess.run(
@@ -207,7 +210,7 @@ def check_markdown_only_fixture() -> list[tuple[bool, str]]:
 
 def check_crop_photo_dry_run() -> list[tuple[bool, str]]:
     results = []
-    scripts_dir = PKG / "resume-tailor-generic" / "scripts"
+    scripts_dir = PKG / TAILOR / "scripts"
     try:
         from PIL import Image  # type: ignore
     except Exception as exc:  # noqa: BLE001
@@ -290,8 +293,8 @@ def check_privacy_scan() -> list[tuple[bool, str]]:
 def check_skill_frontmatter() -> list[tuple[bool, str]]:
     results = []
     for rel, expected_name in [
-        ("resume-tailor-generic/SKILL.md", "resume-tailor-generic"),
-        ("resume-database-generic/SKILL.md", "resume-database-generic"),
+        (f"{TAILOR}/SKILL.md", "resume-tailor-generic"),
+        (f"{DATABASE}/SKILL.md", "resume-database-generic"),
     ]:
         text = (PKG / rel).read_text(encoding="utf-8")
         if text.startswith("---") and f"name: {expected_name}" in text[:400]:
