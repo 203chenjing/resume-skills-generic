@@ -1,6 +1,6 @@
 ---
 name: resume-vault
-description: 写一次百岗可调｜经历入库层 Agent Skill，把简历+确认事实归档成简历数据库.md，STAR/指标/待确认一次到位，下游匹配引擎直接调证据。建库·增量·多项目分层；不出定向稿，改写走 resume-screenpass。
+description: 流水线上游｜简历弹药库 Agent Skill：把简历与确认事实归档成简历数据库.md，STAR/指标/待确认一次到位，为按岗改稿提供可溯源证据底座。只入库不定向，改写走 resume-screenpass。
 tags: [内容创作, 求职工具, 简历]
 version: 1.0.0
 capability: text_generation

@@ -1,6 +1,6 @@
 ﻿# 过筛选改简历 · ScreenPass Resume
 
-# 六秒定生死 — JD 证据链匹配 + 一页 PDF 交付引擎
+# 六秒定生死 — JD 证据链匹配 + 一页 PDF 交付
 
 > **Cursor Agent Skill · 匹配改写层**  
 > 解析 JD → 证据链映射 → STAR 改写 → 版式校验 → 恰好一页 PDF。
@@ -10,32 +10,20 @@
 
 ---
 
-## 先说结论
+## 下游模块：按岗选材与出稿
 
-- **JD 驱动匹配引擎** — 强匹配前置、弱相关压缩、结果量化加粗
-- **证据链可溯源** — 每条 bullet 能回溯到 `简历数据库.md` 或原始材料
-- **脚本校验版式** — 恰好 1 页 PDF，Human-in-the-loop 你点头才交付
+招聘官只给你六秒。JD 关键词不在首屏、叙事与岗位不对路，简历直接 pass——这不是润色能救的，是**选材与排序**的问题。
 
----
+ScreenPass 把改简历从「创作」变成「选择」：解析岗位描述作为压缩方向，从弹药库召回可验证证据，强匹配前置、弱相关压缩，STAR 改写后经你审阅，脚本校验版式，交付**恰好一页 PDF**。
 
-## 你是不是也…
-
-HR 和 ATS **6–10 秒** 完成初筛。
-
-JD 关键词不在首屏？直接进回收站。
-
-AI 润色看着很美，面试一问细节就穿帮？
-
-投完第 8 个岗还在用同一份通用简历 — **本质上是在赌关键词碰运气。**
-
-**过筛选，再谈面试。**
+*ScreenPass is the downstream matching and render engine. The JD sets the compression direction; you keep final approval on every line.*
 
 ---
 
 ## 核心能力
 
-| 能力 | 一句话 |
-|------|--------|
+| 能力 | 说明 |
+|------|------|
 | **JD 解析** | 提取岗位关键词、核心能力、优先级 |
 | **证据链映射** | 从素材库匹配可验证经历，建立 JD ↔ 证据对应 |
 | **匹配引擎** | 强匹配前置、弱相关压缩、结果量化加粗 |
@@ -45,7 +33,7 @@ AI 润色看着很美，面试一问细节就穿帮？
 
 ---
 
-## Pipeline 位置
+## 在流水线中的位置
 
 ```text
 JD + 原始简历（或 简历数据库.md）
@@ -61,11 +49,11 @@ JD + 原始简历（或 简历数据库.md）
   交付：公司+姓名+岗位.pdf（恰好 1 页）
 ```
 
-**推荐搭配：** [简历弹药库 · Resume Vault](../resume-vault/) — 先入库再匹配，效果拉满。
+**推荐搭配：** [简历弹药库 · Resume Vault](../resume-vault/) — 先入库再匹配，效果拉满；没有弹药库也能跑，但每次从零考古。
 
 ---
 
-## 3 步上手
+## 怎么用
 
 ### 1. 安装
 
@@ -76,15 +64,17 @@ JD + 原始简历（或 简历数据库.md）
 | 项目级 | `<your-project>/.cursor/skills/resume-screenpass/` |
 | 个人级 | `~/.cursor/skills/resume-screenpass/` |
 
-开聊：**「用 resume-screenpass 按这份 JD 执行证据链匹配改写，导出一页 PDF。」**
-
 ### 2. 准备输入
 
 - **目标 JD** — 文本 / 链接 / 截图
 - **原始简历** 或 **`简历数据库.md`**（来自 [Resume Vault](../resume-vault/)）
 - **可选** — 岗位名称、城市、证件照路径
 
-### 3. CLI 脚本
+### 3. 开聊
+
+**「用 resume-screenpass 按这份 JD 执行证据链匹配改写，导出一页 PDF。」**
+
+### 4. CLI 脚本（可选）
 
 ```bash
 # 版式预检（仅 Markdown）
@@ -138,6 +128,14 @@ python path/to/resume-screenpass/scripts/markdown_resume_to_pdf.py 示例公司+
 
 ---
 
+## 三条底线
+
+- **不编造** — 缺指标标 `[待补充：指标]`，绝不凭空写经历
+- **人工审阅** — 内容审阅通过后才导出 PDF；AI 提案，你裁决
+- **证据可溯源** — 每条 bullet 能回溯到 `简历数据库.md` 或原始材料
+
+---
+
 示例使用虚构占位信息。真实材料请自行替换，勿将他人隐私提交至公开仓库。
 
-`#Cursor` `#求职` `#过筛选` · v1.0.0 · Matching & Render Layer
+`v1.0.0` · Matching & Render Layer

@@ -1,6 +1,6 @@
 ---
 name: resume-screenpass
-description: 六秒定生死｜JD 证据链匹配引擎 Agent Skill，解析岗位→选证据→STAR 改写→版式校验→恰好一页 PDF。按岗改写·多岗适配·脚本导出；不编造，Human-in-the-loop 你点头才交付。先建库走 resume-vault。
+description: 流水线下游｜过筛选改简历 Agent Skill：JD 驱动证据链匹配→STAR 改写→版式校验→恰好一页 PDF。选材不创作，AI 提案你裁决，每条可溯源。有弹药库效果最佳，建库走 resume-vault。
 tags: [内容创作, 求职工具, 简历]
 version: 1.0.0
 capability: text_generation
