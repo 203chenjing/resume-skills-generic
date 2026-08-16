@@ -1,6 +1,6 @@
 ---
-name: resume-database-generic
-description: 简历素材库。基于原始简历与用户确认信息，建立结构化经历素材库，归档项目贡献、量化结果及待确认项，供多岗位复用。在用户需建库、更新经历或多项目整理时使用。不输出定向简历与 PDF。
+name: resume-vault
+description: 简历弹药库 · Resume Vault。基于原始简历与用户确认信息，建立结构化经历素材库（简历数据库.md），归档 STAR、量化结果及待确认项，供多岗位复用。在用户需建库、更新经历或多项目整理时使用。不输出定向简历与 PDF；按岗改写请用 resume-screenpass。
 tags: [内容创作, 求职工具, 简历]
 version: 1.0.0
 capability: text_generation
@@ -41,7 +41,7 @@ pricing:
 
 ## 与改简历技能分工
 
-| 本 skill | resume-tailor-generic（简历定向改写） |
+| 本 skill | resume-screenpass（过筛选改简历 · ScreenPass Resume） |
 |----------|---------------------------------------|
 | 沉淀全部可验证事实与 STAR | 按单个 JD 筛选、压缩、排序 |
 | 记录层级与 JD 映射规则 | 执行合并/拆条 |

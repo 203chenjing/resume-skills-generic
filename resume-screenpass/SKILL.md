@@ -1,6 +1,6 @@
 ---
-name: resume-tailor-generic
-description: 定向简历改写。依据目标岗位招聘要求，筛选匹配经历、改写投递内容并完成版式校验，输出一页 PDF。在用户需按岗改简历、多岗位适配或 PDF 终稿导出时使用。素材归档请用 resume-database-generic。不编造事实。
+name: resume-screenpass
+description: 过筛选改简历 · ScreenPass Resume。依据目标岗位 JD，从可验证经历中筛选证据、STAR 改写并完成版式校验，输出恰好一页 PDF。在用户需按岗改简历、多岗位适配或 PDF 终稿导出时使用。素材归档请用 resume-vault。不编造事实。
 tags: [内容创作, 求职工具, 简历]
 version: 1.0.0
 capability: text_generation
@@ -31,7 +31,7 @@ pricing:
 | 简历数据库（可选） | `简历数据库.md`，仅合并用户已确认内容 |
 | 偏好（可选） | 岗位名、城市、文件名、证件照 |
 
-知识库缺失时，按 **resume-database-generic** 技能判断是否先建库。
+知识库缺失时，按 **resume-vault** 技能判断是否先建库。
 
 ## 工作流程
 

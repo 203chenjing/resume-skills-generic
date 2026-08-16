@@ -5,7 +5,7 @@
 ## 1. 提取事实
 
 - 提取：联系方式、教育、技能、项目、实习/工作、荣誉、日期。
-- 合并 `简历数据库.md`（若存在）；库缺失且符合 [resume-database-generic](../resume-database-generic/SKILL.md)「必须有」条件时，建议先初始化库。
+- 合并 `简历数据库.md`（若存在）；库缺失且符合 [resume-vault](../resume-vault/SKILL.md)「必须有」条件时，建议先初始化库。
 - PDF 乱码/缺字段 → 请用户提供清晰版或确认不确定项。
 - 证件照：至多一张；路径须在工作区内；无图则请用户添加；禁止外链或虚构路径。
 - 有 [crop_profile_photo.py](scripts/crop_profile_photo.py) 时，导出前统一尺寸/比例。

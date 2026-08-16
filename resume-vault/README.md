@@ -1,4 +1,4 @@
-# 简历素材库 · Your Resume Source of Truth
+# 简历弹药库 · Resume Vault
 
 > **写一次，投百岗 — 在简历筛选开战前，把 STAR、指标和待确认项装进你的弹药库。**  
 > **Write once, apply everywhere — stock STAR, metrics, and open items before the battle of resume screening.**
@@ -7,9 +7,9 @@
 [![Cursor Skill](https://img.shields.io/badge/platform-Cursor%20Agent%20Skill-000000)](https://cursor.com)
 [![Language](https://img.shields.io/badge/language-中文%20%7C%20Chinese-orange)](#)
 
-面向 **Cursor Agent** 的简历经历素材库技能：从原始简历与你确认的信息出发，维护 `简历数据库.md`，沉淀项目贡献、量化结果、层级规则与 `[待确认]` 项。**只归档、不投递** — 本技能不输出定向简历或 PDF；按岗改写请用配套技能。
+面向 **Cursor Agent** 的简历经历素材库技能：从原始简历与你确认的信息出发，维护 `简历数据库.md`，沉淀项目贡献、量化结果、层级规则与 `[待确认]` 项。**只归档、不投递** — 本技能不输出定向简历或 PDF；按岗改写请用配套 [**过筛选改简历 · ScreenPass Resume**](../resume-screenpass/)。
 
-A **Cursor Agent Skill** for building and maintaining **`简历数据库.md`** — your structured experience archive with STAR narratives, metrics, hierarchy rules, and flagged open items. **Archive only** — no tailored resume or PDF here; use the companion tailor skill when you're ready to fight the screen.
+A **Cursor Agent Skill** for building and maintaining **`简历数据库.md`** — your structured experience archive with STAR narratives, metrics, hierarchy rules, and flagged open items. **Archive only** — no tailored resume or PDF here; use [**ScreenPass Resume**](../resume-screenpass/) when you're ready to fight the screen.
 
 ---
 
@@ -45,14 +45,14 @@ Screening is a **speed game**: HR and ATS decide *does this look like the role?*
 
 ### 方案 · The solution
 
-`resume-database-generic` 维护你的 `简历数据库.md`：
+`resume-vault` 维护你的 `简历数据库.md`：
 
 - 从原始材料 **只搬运、不润色** 导入可验证事实
 - 按雇主 / 项目分层整理，补全 STAR 叙事
 - 集中记录量化指标、关键词标签与 `[待确认]` 区
 - 压缩或合并后的细节 **回写库内**，避免下次再丢
 
-`resume-database-generic` maintains your `简历数据库.md`:
+`resume-vault` maintains your `简历数据库.md`:
 
 - Import **verified facts only** — transport, don't polish
 - Layer by employer / project; build STAR narratives
@@ -62,10 +62,10 @@ Screening is a **speed game**: HR and ATS decide *does this look like the role?*
 ### 结果 · The outcome
 
 **之前：** 每投一岗重新翻 PDF，细节越改越薄，筛选时拿不出最匹配的项目线。  
-**之后：** 一份库走百岗 — 定向改写时直接映射证据，筛选关看到的是 **这一岗最值得打的那几枪**。配合 [resume-tailor-generic](../resume-tailor-generic/)，从弹药库到一页 PDF，链路完整。
+**之后：** 一份库走百岗 — 定向改写时直接映射证据，筛选关看到的是 **这一岗最值得打的那几枪**。配合 [ScreenPass Resume](../resume-screenpass/)，从弹药库到一页 PDF，链路完整。
 
 **Before:** Re-dig the PDF per application, thinner detail each time, wrong project line when screening looks for fit.  
-**After:** One library, many roles — tailoring maps evidence instantly; the screen sees **the strongest match for this JD**. Pair with [resume-tailor-generic](../resume-tailor-generic/) for the full path from closet to one-page PDF.
+**After:** One library, many roles — tailoring maps evidence instantly; the screen sees **the strongest match for this JD**. Pair with [ScreenPass Resume](../resume-screenpass/) for the full path from vault to one-page PDF.
 
 ---
 
@@ -76,7 +76,7 @@ Screening is a **speed game**: HR and ATS decide *does this look like the role?*
 - 指标散落、记不清出处，需要 `[待确认]` 集中管理
 - 刚结束实习 / 项目，趁细节还在， **一次性归档**
 
-Anyone **setting up for multiple applications** — build the closet before the screen; candidates with **parallel projects or work lines** at one employer; anyone whose metrics live in fragments and need a `[待确认]` ledger; anyone who just finished an internship or project and should **archive while the detail is fresh**.
+Anyone **setting up for multiple applications** — build the vault before the screen; candidates with **parallel projects or work lines** at one employer; anyone whose metrics live in fragments and need a `[待确认]` ledger; anyone who just finished an internship or project and should **archive while the detail is fresh**.
 
 ---
 
@@ -91,11 +91,11 @@ Anyone **setting up for multiple applications** — build the closet before the 
         ↓
   输出 / 更新 简历数据库.md
         ↓
-  下一步：resume-tailor-generic 按 JD 改写
+  下一步：resume-screenpass 按 JD 改写
 ```
 
-**推荐搭配 · Best paired with:** [resume-tailor-generic](../resume-tailor-generic/) — 素材库是 **全量真相**，改写技能是 **单岗交付**。库不负责过筛选；但没有库，改写技能也无弹可打。  
-Database holds the **full truth**; tailor skill delivers **one role at a time**. The closet doesn't pass the screen — but without it, tailoring fires blanks.
+**推荐搭配 · Best paired with:** [过筛选改简历 · ScreenPass Resume](../resume-screenpass/) — 弹药库是 **全量真相**，改写技能是 **单岗交付**。库不负责过筛选；但没有库，改写技能也无弹可打。  
+The vault holds the **full truth**; ScreenPass delivers **one role at a time**. The vault doesn't pass the screen — but without it, tailoring fires blanks.
 
 ---
 
@@ -109,11 +109,11 @@ Copy this folder into one of your Cursor skills paths:
 
 | 范围 Scope | 路径 Path |
 |------------|-----------|
-| 项目级 Project | `<your-project>/.cursor/skills/resume-database-generic/` |
-| 个人级 User | `~/.cursor/skills/resume-database-generic/`（Windows: `%USERPROFILE%\.cursor\skills\`） |
+| 项目级 Project | `<your-project>/.cursor/skills/resume-vault/` |
+| 个人级 User | `~/.cursor/skills/resume-vault/`（Windows: `%USERPROFILE%\.cursor\skills\`） |
 
-确认存在 `SKILL.md`，在对话中说：**「用 resume-database-generic 根据这份简历建立素材库。」**  
-Ensure `SKILL.md` exists, then prompt: **"Use resume-database-generic to build my experience database from this resume."**
+确认存在 `SKILL.md`，在对话中说：**「用 resume-vault 根据这份简历建立素材库。」**  
+Ensure `SKILL.md` exists, then prompt: **"Use resume-vault to build my experience database from this resume."**
 
 ### 2. 准备输入 · Prepare inputs
 
@@ -158,8 +158,8 @@ Creates or updates **`简历数据库.md`** (or your chosen path). The agent sum
 
 ## 与改写技能的分工 · Division of labor
 
-| 本技能 resume-database-generic | 配套 resume-tailor-generic |
-|--------------------------------|----------------------------|
+| 本技能 resume-vault | 配套 resume-screenpass |
+|---------------------|------------------------|
 | 沉淀全部可验证事实与 STAR | 按单个 JD 筛选、压缩、排序 |
 | 记录层级与映射规则 | 执行合并/拆条与投递版式 |
 | 管理指标来源与待确认项 | 输出 Markdown + 一页 PDF |
