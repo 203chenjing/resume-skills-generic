@@ -1,6 +1,6 @@
 ---
 name: resume-vault
-description: 简历弹药库 · Resume Vault。基于原始简历与用户确认信息，建立结构化经历素材库（简历数据库.md），归档 STAR、量化结果及待确认项，供多岗位复用。在用户需建库、更新经历或多项目整理时使用。不输出定向简历与 PDF；按岗改写请用 resume-screenpass。
+description: 经历入库层 Agent Skill。将原始简历与用户确认事实结构化归档为简历数据库.md，沉淀 STAR、量化指标与待确认项，供下游匹配引擎跨岗位复用。触发：建库、增量更新、多项目分层。不输出定向简历；按岗改写请用 resume-screenpass。
 tags: [内容创作, 求职工具, 简历]
 version: 1.0.0
 capability: text_generation

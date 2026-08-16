@@ -1,6 +1,6 @@
 ---
 name: resume-screenpass
-description: 过筛选改简历 · ScreenPass Resume。依据目标岗位 JD，从可验证经历中筛选证据、STAR 改写并完成版式校验，输出恰好一页 PDF。在用户需按岗改简历、多岗位适配或 PDF 终稿导出时使用。素材归档请用 resume-vault。不编造事实。
+description: 匹配改写层 Agent Skill。解析目标 JD，驱动证据链映射与匹配引擎，执行 STAR 改写、版式校验，输出恰好一页 PDF。触发：按岗改写、多岗适配、终稿导出。素材归档请用 resume-vault。不编造事实，人工审阅后交付。
 tags: [内容创作, 求职工具, 简历]
 version: 1.0.0
 capability: text_generation
