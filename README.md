@@ -1,45 +1,61 @@
-# 六秒过筛选 · Agent 原生简历投递流水线
+# 别再用一份简历硬投 100 岗 · 6 秒过筛选的 Agent 简历流水线
 
-# Pass the 6-Second Screen · Agent-Native Resume Delivery Pipeline
-
-> **面向 Cursor Agent 的双模块简历工作流：经历结构化入库 → JD 证据链匹配 → 版式校验 → 一页 PDF 交付。**  
-> **A dual-module Cursor Agent workflow — structured experience vaulting → JD evidence-chain matching → layout validation → single-page PDF delivery.**
+# Stop Spamming One Resume · Agent-Native Pipeline for the 6-Second Screen
 
 [![Cursor](https://img.shields.io/badge/platform-Cursor%20Agent%20Skills-000000)](https://cursor.com)
 [![Language](https://img.shields.io/badge/language-中文%20%7C%20English-orange)](#)
 
 ---
 
-## 产品定义 · Product Definition
+## 先说结论
 
-**Resume Skills Generic** 是一套面向求职场景的 Cursor Agent Skill 组合，将简历投递从「反复翻改旧 PDF」升级为可复用的 Agent 工作流。上游模块沉淀可验证经历档案，下游模块执行 JD 驱动的证据链匹配与版式校验，最终输出恰好一页、可溯源的投递 PDF。
-
-**Resume Skills Generic** is a Cursor Agent Skill suite for job applications. It replaces ad-hoc PDF editing with a repeatable agent workflow: an upstream module archives verified experience, a downstream module runs JD-driven evidence-chain matching and layout validation, and delivers a traceable, exactly-one-page PDF.
-
----
-
-## 问题与方案 · Problem → Solution
-
-**问题：** 招聘方与 ATS 通常在 **6–10 秒** 内完成初筛，判定依据并非履历全貌，而是关键词可见度、首屏证据密度与岗位叙事一致性。缺乏单一事实来源时，每次定向改写都需重新考古原始材料，细节在压缩与合并中持续流失；通用 AI 润色虽能美化措辞，却无法建立可回溯的证据链，筛选过关后往往在面试环节失守。
-
-**Problem:** Recruiters and ATS systems typically complete first-pass screening in **6–10 seconds**, judging keyword visibility, above-the-fold evidence density, and role narrative alignment — not your full career history. Without a single source of truth, every tailoring session re-excavates source material and loses detail through compression. Generic AI polish improves wording but cannot establish a traceable evidence chain — screening gains collapse in interviews.
-
-**方案：** 本套件以 **Ingest → Vault → Match → Render → PDF** 五步流水线组织投递流程。`resume-vault` 将原始简历与用户确认事实结构化归档为 `简历数据库.md`；`resume-screenpass` 解析目标 JD、驱动匹配引擎选取证据、执行 STAR 改写与版式校验，导出经脚本验证的单页 PDF。全流程坚持不编造、人工审阅、证据可溯源。
-
-**Solution:** This suite organizes delivery as a five-stage pipeline — **Ingest → Vault → Match → Render → PDF**. `resume-vault` archives verified facts into `简历数据库.md`; `resume-screenpass` parses the target JD, drives the matching engine to select evidence, executes STAR rewriting and layout validation, and exports a script-verified single-page PDF. The full workflow enforces no fabrication, human-in-the-loop review, and traceable evidence.
+- **双模块 Cursor Agent Skill** — 上游建弹药库，下游按 JD 打定向稿，一条龙到 PDF
+- **证据链可溯源** — 每条 bullet 能回溯到 `简历数据库.md`，面试敢讲、敢举证
+- **Human-in-the-loop** — 不编造事实，脚本校验版式，你点头才交付
 
 ---
 
-## 产品模块 · Product Modules
+## 你是不是也…
 
-| 模块 Module | 定位 Positioning | 能力标签 Capability Tags |
-|-------------|------------------|--------------------------|
-| [**简历弹药库 · Resume Vault**](resume-vault/) | 经历结构化入库 · Experience Ingestion Layer | `证据归档` `STAR 结构化` `指标台账` `待确认管理` `多岗复用` |
-| [**过筛选改简历 · ScreenPass Resume**](resume-screenpass/) | JD 匹配改写引擎 · JD Matching & Render Engine | `证据链映射` `匹配引擎` `STAR 改写` `版式校验` `一页 PDF` |
+HR 平均 **6–10 秒** 扫完一份简历。
+
+关键词不在首屏？直接 pass。
+
+每次改岗都要重新翻 PDF、扒聊天记录、临时凑指标？
+
+通用 AI 润色是好看，但面试一问细节就穿帮。
+
+**根因很简单：没有单一事实来源，也没有可复用的匹配引擎。**
 
 ---
 
-## 架构与工作流 · Architecture & Workflow
+## 两个产品模块
+
+### 📦 [简历弹药库 · Resume Vault](resume-vault/)
+
+**写一次，百岗可调。**
+
+把原始简历 + 你确认过的事实，结构化归档成 `简历数据库.md`。
+
+STAR、量化指标、`[待确认]` 台账 — 全在这里，下游匹配引擎直接调用。
+
+> 只负责入库，不输出定向简历。按岗改写 → 走 ScreenPass。
+
+---
+
+### 🎯 [过筛选改简历 · ScreenPass Resume](resume-screenpass/)
+
+**六秒定生死，证据链说话。**
+
+解析目标 JD → 驱动匹配引擎选证据 → STAR 改写 → 版式校验 → **恰好一页 PDF**。
+
+强匹配前置、弱相关压缩、结果量化加粗。过筛选，再谈面试。
+
+> 有弹药库效果拉满；没有也能跑，但每次从零考古。
+
+---
+
+## 工作流 · Pipeline
 
 ```mermaid
 flowchart LR
@@ -63,7 +79,7 @@ PDF       版式预检 → 脚本导出 → 公司+姓名+岗位.pdf（恰好 1 
 
 ---
 
-## 快速安装 · Quick Install
+## 3 步上手
 
 ### 1. Clone
 
@@ -72,49 +88,42 @@ git clone https://github.com/203chenjing/resume-skills-generic.git
 cd resume-skills-generic
 ```
 
-### 2. 部署 Agent Skills · Deploy to Cursor
+### 2. 丢进 Cursor Skills 目录
 
-将 `resume-vault/` 与 `resume-screenpass/` 复制至 Cursor 技能目录：
+| 范围 | 路径 |
+|------|------|
+| 项目级 | `<your-project>/.cursor/skills/` |
+| 个人级 | `~/.cursor/skills/`（Windows: `%USERPROFILE%\.cursor\skills\`） |
 
-| 范围 Scope | 路径 Path |
-|------------|-----------|
-| 项目级 Project | `<your-project>/.cursor/skills/` |
-| 个人级 Global | `~/.cursor/skills/`（Windows: `%USERPROFILE%\.cursor\skills\`） |
+把 `resume-vault/` 和 `resume-screenpass/` 两个文件夹复制进去。
 
-### 3. 启动工作流 · Invoke
+### 3. 开聊
 
-- **建库：**「用 resume-vault 根据这份简历建立结构化素材库。」  
-  *"Use resume-vault to build a structured experience database from this resume."*
-- **改写：**「用 resume-screenpass 按这份 JD 执行证据链匹配改写，导出一页 PDF。」  
-  *"Use resume-screenpass to match evidence to this JD and export a one-page PDF."*
+- **建库：**「用 resume-vault 根据这份简历建立结构化素材库。」
+- **改写：**「用 resume-screenpass 按这份 JD 执行证据链匹配改写，导出一页 PDF。」
 
-各模块详细文档见 [`resume-vault/README.md`](resume-vault/README.md) 与 [`resume-screenpass/README.md`](resume-screenpass/README.md)。
+详细玩法 → [`resume-vault/README.md`](resume-vault/README.md) · [`resume-screenpass/README.md`](resume-screenpass/README.md)
 
 ---
 
-## 适用对象 · Who It's For
+## 适合谁
 
-| 人群 Segment | 典型场景 Typical Use Case |
-|--------------|---------------------------|
-| **多岗投递者** | 校招、实习、跳槽等需面向多个 JD 快速产出定向版本 |
-| **复杂经历持有者** | 同一雇主下并列项目或多条工作线，需按岗切换叙事主线 |
-| **质量优先者** | 要求证据可溯源、拒绝 AI 编造，需脚本校验版式与页数 |
-| **Agent 工作流用户** | 已在 Cursor 中使用 Agent Skill，希望将简历投递纳入可复用流水线 |
-
----
-
-## 信任与合规 · Trust & Compliance
-
-- **不编造事实** — 缺指标标注 `[待补充：指标]` 或 `[待确认]`，禁止凭空生成经历
-- **人工审阅闭环** — Agent 产出内容须经用户确认后方可导出终稿
-- **证据可溯源** — 每条投递表述可回溯至 `简历数据库.md` 或原始材料
-- **隐私保护** — 示例与文档使用虚构占位信息；请替换为经确认的真实材料，勿将他人隐私提交至公开仓库
-
-- **No fabrication** — missing metrics flagged as `[待补充：指标]` or `[待确认]`; no invented experience
-- **Human-in-the-loop** — agent output requires user confirmation before final export
-- **Traceable evidence** — every claim maps back to `简历数据库.md` or source material
-- **Privacy** — samples use fictional placeholders; replace with verified information only
+| 你是谁 | 为什么需要它 |
+|--------|-------------|
+| **多岗投递党** | 校招 / 实习 / 跳槽，每个 JD 都要定向版本 |
+| **经历复杂选手** | 同一家公司多个并列项目，按岗切换叙事主线 |
+| **质量洁癖** | 拒绝 AI 编造，要脚本校验 + 证据可溯源 |
+| **Cursor 重度用户** | 想把简历投递纳入可复用 Agent 工作流 |
 
 ---
 
-**v1.0.0** · Cursor Agent Skills · 求职工具 · Agent Workflow
+## 信任底线
+
+- **不编造** — 缺指标标 `[待补充：指标]` 或 `[待确认]`，绝不凭空写经历
+- **你说了算** — Agent 产出须经你审阅确认，才导出终稿
+- **证据可追溯** — 每条表述能回溯到 `简历数据库.md` 或原始材料
+- **隐私自己管** — 示例全是虚构占位；真实材料别往公开仓库扔
+
+---
+
+`#Cursor` `#Agent` `#求职` `#简历` `#证据链` · v1.0.0

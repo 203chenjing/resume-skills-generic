@@ -1,6 +1,6 @@
 ---
 name: resume-screenpass
-description: 匹配改写层 Agent Skill。解析目标 JD，驱动证据链映射与匹配引擎，执行 STAR 改写、版式校验，输出恰好一页 PDF。触发：按岗改写、多岗适配、终稿导出。素材归档请用 resume-vault。不编造事实，人工审阅后交付。
+description: 六秒定生死｜JD 证据链匹配引擎 Agent Skill，解析岗位→选证据→STAR 改写→版式校验→恰好一页 PDF。按岗改写·多岗适配·脚本导出；不编造，Human-in-the-loop 你点头才交付。先建库走 resume-vault。
 tags: [内容创作, 求职工具, 简历]
 version: 1.0.0
 capability: text_generation
