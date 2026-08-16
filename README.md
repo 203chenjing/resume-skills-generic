@@ -1,6 +1,10 @@
-# 一套投递流水线：管简历、投简历，不是「写」简历
+# 简历投递流水线
 
-# A Resume Pipeline — Manage & Apply, Don't Just Write
+# Resume Pipeline
+
+**Agent 原生双模块简历工作流** — 管简历、投简历，不是「写」简历。
+
+*Manage & apply with evidence—not blank-page writing.*
 
 [![Cursor](https://img.shields.io/badge/platform-Cursor%20Agent%20Skills-000000)](https://cursor.com)
 [![Language](https://img.shields.io/badge/language-中文%20%7C%20English-orange)](#)
@@ -124,8 +128,8 @@ flowchart LR
 ### 1. Clone
 
 ```bash
-git clone https://github.com/203chenjing/resume-skills-generic.git
-cd resume-skills-generic
+git clone https://github.com/203chenjing/resume-pipeline.git
+cd resume-pipeline
 ```
 
 ### 2. 安装到 Cursor Skills 目录
