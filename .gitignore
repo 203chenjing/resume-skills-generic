@@ -1,0 +1,37 @@
+# Real PII — never commit (local-only working copies)
+佛山+邱宁宁+平面设计.md
+佛山+邱宁宁+平面设计.*
+邱宁宁+平面设计.*
+*邱宁宁*
+
+# Local artifacts at repo root (fixture copy lives under fixtures/)
+/profile-photo-cropped.png
+_docx_check/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+.venv/
+venv/
+
+# Secrets & local env
+.env
+.env.*
+
+# OS junk
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor / IDE
+.cursor/
+
+# Node (if any tooling added later)
+node_modules/
+
+# Release artifacts (generated zips)
+publish/**/*.zip
